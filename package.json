@@ -1,0 +1,27 @@
+{
+  "name": "continue-assign-parser",
+  "version": "1.0.0",
+  "description": "a parser which can parse assign a value to some variables",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u bdd ./test/*.js",
+    "cov":"istanbul cover ./node_modules/mocha/bin/_mocha test/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "keywords": [
+    "parser",
+    "js",
+    "assign"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucefer/continue-assign-parser.git"
+  },
+  "author": "lucefer",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2"
+  }
+}
