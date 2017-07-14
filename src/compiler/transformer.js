@@ -18,7 +18,7 @@ function tranverser(old_ast, visitor) {
       case 'VariableDeclaration':
         tranverseArray(node.body, node)
         break
-      case 'EqualVariableDeclarations':
+      case 'EqualVariableDeclaration':
         tranverseArray(node.body, node)
         break
       case 'Identifier':
@@ -56,7 +56,7 @@ function transformer(old_ast) {
         node_parent.context.push(assignNode)
       }
     },
-    'EqualVariableDeclarations': {
+    'EqualVariableDeclaration': {
       enter(node,node_parent) {
         let assignNode = {
           type: 'AssignmentEqual',

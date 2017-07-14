@@ -1,0 +1,23 @@
+#! /usr/bin/env node
+"use strict";
+const program = require('commander')
+const compile = require('../index')
+const fs = require('fs')
+const path = require('path')
+program
+  .usage('<template-name> [project-name]')
+  .option('-f, --file <name>', 'parse file')
+  .option('-s, --string <name>', 'parse string')
+
+
+program.parse(process.argv)
+let result = ''
+if(program.string){
+  result = compile(program.string)
+} else if(program.file){
+  let source = fs.readFileSync(path.resolve(process.cwd(),program.file),"utf-8")
+  result = compile(source)
+}
+console.log("------------------start")
+console.log(result)
+console.log("--------------------end")

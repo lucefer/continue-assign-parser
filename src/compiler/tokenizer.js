@@ -9,7 +9,7 @@ let char
 let source
 let len
 
-//当前字符是否符合标识符的开始符号规则
+//当前字符是否符合标识符的开始规则
 function isIdStart(ch) {
   return (ch === '$') || (ch === '_')||
         (LetterReg.test(ch))
@@ -20,6 +20,7 @@ function isIdPart(ch) {
             LetterReg.test(ch)||        // a..zA..Z
             NumberReg.test(ch)        // 0..9
 }
+
 function isKeyword(id) {
   switch(id.length) {
     case 2:
@@ -74,7 +75,7 @@ function scanId(){
     type = Type.KEYWORD
   } else if(id === 'null') {
     type = Type.NULL_LITERAL
-  } else if(id === 'true' || id==='false'){
+  } else if(id === 'true' || id === 'false'){
     type = Type.BOOLEAN_LITERAL
   } else {
     type = Type.IDENTIFIER
@@ -461,4 +462,5 @@ function tokenizer(src) {
   }
   return token_list
 }
+
 module.exports =  tokenizer

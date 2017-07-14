@@ -31,7 +31,7 @@ function parseProgram() {
       if(body[i]) {
         let variableNode = body[i]
         for(let j=0; j < variableNode.body.length; j++){
-          if(variableNode.body[j].type === Syntax.EqualVariableDeclarations){
+          if(variableNode.body[j].type === Syntax.EqualVariableDeclaration){
             hasEqual = true
             break
           }
@@ -107,7 +107,7 @@ function parseEqualVariableDeclaration(re) {
     }
     if(id_list.length > 1) {
         equalNode = new Node()
-        equalNode.type = Syntax.EqualVariableDeclarations
+        equalNode.type = Syntax.EqualVariableDeclaration
         equalNode.body = id_list
         re.push(equalNode)
     } else if (id_list.length === 1) {

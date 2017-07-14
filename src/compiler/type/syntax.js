@@ -9,7 +9,7 @@ const Syntax = {
     ObjectPattern: 'ObjectPattern', //对象结构赋值
     Program: 'Program', //程序
     VariableDeclaration: 'VariableDeclaration', //变量定义
-    EqualVariableDeclarations: 'EqualVariableDeclarations'//连等赋值变量表达式
+    EqualVariableDeclaration: 'EqualVariableDeclaration'//连等赋值变量表达式
 }
 
 module.exports = Syntax
