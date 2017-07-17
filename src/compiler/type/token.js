@@ -1,4 +1,4 @@
-let tokenType = {
+const tokenType = {
   IDENTIFIER: 1,
   KEYWORD: 2,
   EOF: 3,

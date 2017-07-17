@@ -52,7 +52,8 @@ npm install -g continue-assign-parser
 ```
 aparse -f 'index.js'
 ```
-编译目录下名为index.js的文件，返回编译好的代码
+编译目录下名为index.js的文件，返回编译好的代码    
+
 2. 编译字符串
 ```
 aparse -s 'let a b c = 1000'
